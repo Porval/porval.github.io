@@ -1,23 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html>    
+  {% include head.html %}
 
-	<html>
-			<body class="main_body">
+  <body>
+    {% include header.html %}
+    <br>
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+    
+    {% include footer.html %}
+    
+  </body>
 
-				{% include head.html %}
-
-				{% include sidebar.html %}
-
-				<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-		         content to avoid any CSS collisions with our real content. -->
-		    <div class="wrap">
-				</div>
-				<div class="content_container">
-
-		        {{ content }}
-
-		    </div>
-
-	　　　　
-		<label for="sidebar-checkbox" class="sidebar-toggle"/>
-		</body>
 </html>
