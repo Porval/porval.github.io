@@ -4,11 +4,18 @@ title: "眼花缭乱 JsonObject"
 categories: problem
 ---
 
-#眼花缭乱 JsonObject
+###JsonObject vs JsonObject
 
-###json是什么
+两个类很像，不注意写就容易同时出现在code中，导致代码混乱。
+添加上包名就比较容易区别些
 
-json是一种轻量级、独立于语言便于交互的数据格式.
+org.json.JSONObject vs com.google.gson.JsonObject
+
+搞清楚两者的关系，需要先清楚Json是什么
+
+###Json是什么
+
+Json是一种轻量级、独立于语言便于交互的数据格式.
 
 ```java
    {
@@ -21,6 +28,8 @@ json是一种轻量级、独立于语言便于交互的数据格式.
 [详见](http://www.json.org/)  
 
 ###JSON libs
+所以基于Json数据格式的Java实现有很多,以下列举了一些比较常用的
+
 * [orj.json](https://github.com/douglascrockford/JSON-java)
   java古老常用的package,android sdk中自带.JsonObject常用的方法比较简单实用
   最大的缺点是需要读取整个字符串才能解析.

@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "LRUCAHE解析"
+title: "LruCache解析"
 categories: problem
 ---
-
-#LRUCAHE
 
 ###Introduce
 LruCache是android提供的一个缓存工具类,其算法是最近最少使用算法。它把最近使用的对象用“强引用”存储在LinkedHashMap中，并且把最近最少使用的对象在缓存值达到预设值之前就从内存中移除。其在API12被引用，低版本可以用support包中的类.
