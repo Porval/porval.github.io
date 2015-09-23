@@ -4,7 +4,7 @@ title: "眼花缭乱 JsonObject"
 categories: problem
 ---
 
-###JsonObject vs JsonObject
+###JSONObject vs JsonObject
 
 两个类很像，不注意写就容易同时出现在code中，导致代码混乱。
 添加上包名就比较容易区别些
