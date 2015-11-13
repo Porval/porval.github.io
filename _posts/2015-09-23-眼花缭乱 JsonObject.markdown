@@ -41,6 +41,8 @@ Json是一种轻量级、独立于语言便于交互的数据格式.
 
 * [jackson](http://www.eoeandroid.com/thread-173165-1-1.html) 据说效率比较gson更快一些，但是考虑到android app集成lib需要考虑包的大小，不推荐使用.(最新版本已经达到了1.1M)
 
+* [fastJson](https://github.com/alibaba/fastjson) 阿里自主研发的json lib号称是java语言中最快的lib 比gson快6倍，[评测报告](https://github.com/eishay/jvm-serializers/wiki/Staging-Results)
+
 ###refrence
 * https://en.wikipedia.org/wiki/Gson
 * http://stackoverflow.com/questions/7935078/performance-and-usability-comparison-of-android-json-libraries
