@@ -3,7 +3,7 @@ layout: post
 title: "微信开发平台签名问题"
 categories: problem
 ---
-###android apk签名
+### android apk签名
 首先需要了解一个概念是android apk签名.
 
 ``
@@ -16,7 +16,7 @@ android需要所有的apps在安装之前都有一个拥有数字签名的证书
 
 明白了Android apk签名之后，对于微信开放平台所需签名就是这个签名.
 
-####[签名生成工具](https://open.weixin.qq.com/cgi-bin/readtemplate?t=resource/app_download_android_tmpl&lang=zh_CN)
+#### [签名生成工具](https://open.weixin.qq.com/cgi-bin/readtemplate?t=resource/app_download_android_tmpl&lang=zh_CN)
 
 微信提供的签名生成工具，不要被名字误导了
 它实际做得工作，其实只是通过packageName，获取到手机已安装的app,然后解析该app的签名.(一开始我以为是通过packageName生成的签名，想为啥还要用户这么麻烦，自己生成一遍)
@@ -24,11 +24,11 @@ android需要所有的apps在安装之前都有一个拥有数字签名的证书
 当该app未安装的时候，该工具就报错了.
 
 在电脑上解压，通过命令行也可以[查看](http://blog.csdn.net/wed110/article/details/38303637).
- 
+
 所以有人碰到两台手机生成2个不同的签名时，其实是两台手机的包不同。
 
 通常情况下，debug模式下的签名是IDE自动生成，一般开发者release模式下才会添加签名,为了调试状态下也能调用微信,所以在debug模式下也需要使用自己的签名.
 
-###refer
+### refer
 * https://developer.android.com/tools/publishing/app-signing.html
 * http://blog.csdn.net/wed110/article/details/38303637
