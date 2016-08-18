@@ -3,7 +3,7 @@ layout: post
 title: "微信开发平台签名问题"
 categories: problem
 ---
-### android apk签名
+### Android apk签名
 首先需要了解一个概念是android apk签名.
 
 ``
@@ -29,6 +29,6 @@ android需要所有的apps在安装之前都有一个拥有数字签名的证书
 
 通常情况下，debug模式下的签名是IDE自动生成，一般开发者release模式下才会添加签名,为了调试状态下也能调用微信,所以在debug模式下也需要使用自己的签名.
 
-### refer
+### Refer
 * https://developer.android.com/tools/publishing/app-signing.html
 * http://blog.csdn.net/wed110/article/details/38303637

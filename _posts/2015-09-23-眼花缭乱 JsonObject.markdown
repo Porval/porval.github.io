@@ -4,7 +4,7 @@ title: "眼花缭乱 JsonObject"
 categories: problem
 ---
 
-###JSONObject vs JsonObject
+### JSONObject vs JsonObject
 
 两个类很像，不注意写就容易同时出现在code中，导致代码混乱。
 添加上包名就比较容易区别些
@@ -13,7 +13,7 @@ org.json.JSONObject vs com.google.gson.JsonObject
 
 搞清楚两者的关系，需要先清楚Json是什么
 
-###Json是什么
+### Json是什么
 
 Json是一种轻量级、独立于语言便于交互的数据格式.
 
@@ -27,7 +27,7 @@ Json是一种轻量级、独立于语言便于交互的数据格式.
 
 [详见](http://www.json.org/)  
 
-###JSON libs
+### JSON libs
 所以基于Json数据格式的Java实现有很多,以下列举了一些比较常用的
 
 * [orj.json](https://github.com/douglascrockford/JSON-java)
@@ -43,7 +43,7 @@ Json是一种轻量级、独立于语言便于交互的数据格式.
 
 * [fastJson](https://github.com/alibaba/fastjson) 阿里自主研发的json lib号称是java语言中最快的lib 比gson快6倍，[评测报告](https://github.com/eishay/jvm-serializers/wiki/Staging-Results)
 
-###refrence
+### Refrence
 * https://en.wikipedia.org/wiki/Gson
 * http://stackoverflow.com/questions/7935078/performance-and-usability-comparison-of-android-json-libraries
 * https://groups.google.com/forum/#!topic/google-gson/XPQerLWrgSI

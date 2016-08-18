@@ -4,21 +4,21 @@ title: "LruCache解析"
 categories: problem
 ---
 
-###Introduce
+### Introduce
 LruCache是android提供的一个缓存工具类,其算法是最近最少使用算法。它把最近使用的对象用“强引用”存储在LinkedHashMap中，并且把最近最少使用的对象在缓存值达到预设值之前就从内存中移除。其在API12被引用，低版本可以用support包中的类.
 
 
-###LruCache
+### LruCache
 LruCache在trimToSize方法中，提取LinkedHashMap中最后一项，如果当前size超过maxSize就删除该项。
 所以实际上最近最少使用算法由LinkedHashMap维护.
 
-###LinkedHashMap
+### LinkedHashMap
 * LinkedHashMap中存在LinkedEntry<K,V> header链表
 * 重构了addNewEntry,当加入新的元素时插入队尾
 * 重构了get(Object key),当query的key存在对应的LinkedEntry对象，如果是acessOrder情况下，将该元素makeTail()放到链表的尾部
 * 在LRUCache中trimToSize,获取LinkedHashMap中最旧的一项删除（部分源码有点问题）
 
 
-###refrence
+### Refrence
 * http://www.cnblogs.com/tianzhijiexian/p/4248677.html
 * http://developer.android.com/reference/android/support/v4/util/LruCache.html
