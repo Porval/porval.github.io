@@ -21,6 +21,8 @@ categories: design
 
 对于不同的设计模式来讲，只是将以上的逻辑封装到不同的抽象模块中来实现，模块之间的信息通道也不同。
 
+![](https://pic2.zhimg.com/2f9e4ee7d9616257ab41de204c06ffd5_r.jpg)
+
 ### MVC
 * MVC中m和c的分离比较清晰，v和c的分离就比较模糊。刚出现的时候，这个设计是为了在pc的excel 文档软件对于相同数据源下，不同view的展示
 * 在Android 由于xml的View视图功能太弱，需要在activity中处理View的业务逻辑（可见不可见，重新刷新等）传统activity就变得过于庞大了
