@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "[摘要] App启动 Https加密 Android Context"
+date:   2016-09-21 16:28:00
+categories: reviews
+---
+
+#### Android系统启动过程，App启动过程 ]从桌面点击到activity启动的过程 [页面](http://androidzhibinw.github.io/android/app/startup/activity/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%90%AF%E5%8A%A8/%E5%88%86%E6%9E%90/2015/09/21/android-app-startup-process/)
+
+---
+ * Launcher 接收到点击事件，获取应用的信息，向ActivityManagerService 发起启动应用的请求。
+ * AMS 请求 Launcher Pause （Launcher 需要保存状态进入后台）
+ * Launcher Pause (ActivityThread中)， 向 SystemServer(AMS) 发送 Pause 完毕
+ * AMS 向 Zygote 请求启动一个新进程(calculator)
+ * Zygote fork 出新进程(calculator) , 在新进程中执行 ActivityThread 类的 main 方法
+ * ActivityThread attach 到 AMS（跨进程Binder的方式）
+ * AMS 发指令 activityThread launch 调用scheduleLaunchActivity
+ * activtityThread 展开对应Activity
+
+---
+
+
+#### https工作原理 [页面](http://gold.xitu.io/entry/57e1f78e79bc44610a4f49b7)
+
+---
+  * 对称加密采用对称密码编码技术，也就是编码和解码采用相同描述字符，即加密和解密使用相同的密钥，实现这种加密技术的算法称对称加密算法。对称加密使用简单，密钥较短，加密和解密过程较快，耗时短，常见的对称加密算法有DES，3DES，lDEA，AES，RC4等。
+  * 非对称加密与对称加密不同，其加密算法需要两个密钥：公开密钥（publickey）和私有密钥（private），两者是一对的。如果用公钥加密，只能用私钥才能解密。非对称加密保密性好，但加密和解密花费的时间较长，不适合对大文件加密而只适合对少量的数据加密。常见的非对称加密算法有RSA，ECC，DSA(数字签名)等。
+  * Hash算法是一种单向算法，通过Hash算法可以对目标数据生成一段特定长度、唯一的hash值,但是不能通过这个hash值重新计算出原始的数据，因此也称之为摘要算法，经常被用在不需要数据还原的密码加密以及数据完整性校验上，常用的算法有MD2，MD4，MD5，SHA等。
+
+  * 证书：证书中包含有私钥或者公钥，这样客户端和服务器就可以对信息进行加解密。证书可以产生证书链，由A信任B，这样在授权的情况下就建立自己的证书
+
+  * https加密:由于对称加密比非对称加密快，https决定使用对称加密来加密数据，使用非对称加密对称加密生成的密钥，以确保安全。
+
+---
+
+#### Android中java核心内容内部类 [页面](http://gold.xitu.io/entry/57e0148d0e3dd900697a584e)
+
+   A: java静态内部类不含有外部类对象
+
+
+#### Android Context [页面](http://gold.xitu.io/entry/57d8c0f1a22b9d0061f19fd0)
+
+---
+  ```java
+
+  	/**
+	 * Interface to global informat	ion about an application environment.  This is
+ 	 * an abstract class whose implementation is provided by
+ 	 * the Android system.  It
+     * allows access to application-specific resources and classes, as well as
+     * up-calls for application-level operations such as launching activities,
+ 	 * broadcasting and receiving intents, etc.
+ 	 */
+	public abstract class Context {
+
+  	/** Return an AssetManager instance for your application's package. */
+    public abstract AssetManager getAssets();
+
+    /** Return a Resources instance for your application's package. */
+    public abstract Resources getResources();
+
+    /** Return PackageManager instance to find global package information. */
+    public abstract PackageManager getPackageManager();
+
+    /** Return a ContentResolver instance for your application's package. */
+    public abstract ContentResolver getContentResolver();
+
+    /**
+     * Return the Looper for the main thread of the current process.  This is
+     * the thread used to dispatch calls to application components (activities,
+     * services, etc).
+     * <p>
+     * By definition, this method returns the same result as would be obtained
+     * by calling {@link Looper#getMainLooper() Looper.getMainLooper()}.
+     * </p>
+     *
+     * @return The main looper.
+     */
+    public abstract Looper getMainLooper();
+
+  	}
+
+  ```
+
+  Context如注释中第一句所讲，是一个app运行环境的全局信息，可以获取该app下的ResourceManager,AssetsManager以及其他app相关Manager.
+
+  ContextImpl 是主要的实现类，实现了 Context 的大部分方法，针对 Application、Activity、Service 提供了对应的构造方法。三种Context大体相同，Activity继承于ContextThemeWrapper可以设置主题
+
+---
