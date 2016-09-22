@@ -33,7 +33,7 @@ categories: reviews
 
 ### Android Context [页面](http://gold.xitu.io/entry/57d8c0f1a22b9d0061f19fd0)
 
-  ```java
+  ```
   /**
 	 * Interface to global informat	ion about an application environment.  This is
  	 * an abstract class whose implementation is provided by
