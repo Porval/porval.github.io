@@ -52,3 +52,6 @@ categories: reviews
   Context如注释中第一句所讲，是一个app运行环境的全局信息，可以获取该app下的ResourceManager,AssetsManager以及其他app相关Manager.
 
   ContextImpl 是主要的实现类，实现了 Context 的大部分方法，针对 Application、Activity、Service 提供了对应的构造方法。三种Context大体相同，Activity继承于ContextThemeWrapper可以设置主题
+
+
+  真是被恶心到 github的markdown排版真是狗了
