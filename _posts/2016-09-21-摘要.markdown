@@ -34,10 +34,7 @@ categories: reviews
 ### Android Context [页面](http://gold.xitu.io/entry/57d8c0f1a22b9d0061f19fd0)
 
   ```
-  /**
-   Interface to global informat	ion about an application environment.  This is
- 	 */
-	public abstract class Context {
+  	public abstract class Context {
 
   	/** Return an AssetManager instance for your application's package. */
     public abstract AssetManager getAssets();
@@ -52,6 +49,8 @@ categories: reviews
     public abstract ContentResolver getContentResolver();
   }
   ```
+
+  Interface to global information about an application environment.
 
   Context如注释中第一句所讲，是一个app运行环境的全局信息，可以获取该app下的ResourceManager,AssetsManager以及其他app相关Manager.
 
